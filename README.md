@@ -22,7 +22,7 @@ cmake ../
 ```
  - Download Project.zip onto your Jetson Nano and extract it to your desired location
  ```
- git clone --depth=1 --branch=master https://github.com/SomedudeX/Nvidia-Project Nvidia-Project
+ git clone --depth=1 --branch=main https://github.com/SomedudeX/Nvidia-Project Nvidia-Project
 rm -rf ./Nvidia-Project/.git
  ```
 
