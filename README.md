@@ -16,16 +16,17 @@ This is the Final Project for Nvidia and IDTech's program. It is a model that ca
 ```bash
 git clone --recursive https://github.com/dusty-nv/jetson-inference
 ```
- - Build the project by making a build directory and running the following in the build directory
+ - Build the jetson-inference by making a build directory and running the following in the build directory
 ```bash
+cd jetson-inference
+mkdir build
+cd build
 cmake ../
 ```
- - Download Project.zip onto your Jetson Nano and extract it to your desired location
+ - Clone this repository onto your Jetson Nano by running the following command
  ```
- git clone --depth=1 --branch=main https://github.com/SomedudeX/Nvidia-Project Nvidia-Project
-rm -rf ./Nvidia-Project/.git
+ git clone https://github.com/SomedudeX/Nvidia-Project
  ```
-
 
 
 # Image Recognition
@@ -36,18 +37,16 @@ If you would only like to detect stationary images, run the command below. Note 
  - Run the following command
 
   ```bash
-imagenet.py --model=<PATH TO DOWNLOADED RESNET18.ONNX> --input_blob=input_0 --output_blob=output_0 --labels=<PATH TO DOWNLOADED LABELS.TXT> <PATH TO INPUT IMAGE> <PATH TO OUTPUT LOCATION>
+imagenet.py --model=<PATH TO DOWNLOADED RESNET18.ONNX> --input_blob=input_0 --output_blob=output_0 \
+--labels=<PATH TO DOWNLOADED LABELS.TXT> <PATH TO INPUT IMAGE> <PATH TO OUTPUT LOCATION>
   ```
 
- > **Note**: When copying, replace the text in angled brakets with their respective paths. For <PATH TO DOWNLOADED RESNET18.ONNX> and <PATH TO DOWNLOADED LABELS.TXT>, replace with the path to the files from this repo. For <PATH TO INPUT IMAGE> and <PATH TO OUTPUT LOCATION>, replace with the path to the image you wish to run and the desired output location and filename. 
-
-#### Demo
-
- - If you are confused as to how to use the command, you can watch the demo video [here](https://youtu.be/Y6P_PTaILX0)
+ > **Note**: When copying, replace the text in angled brakets with their respective paths. For \<PATH TO DOWNLOADED RESNET18.ONNX\> and \<PATH TO DOWNLOADED LABELS.TXT\>, replace with the path to the files from this repo. For \<PATH TO INPUT IMAGE\> and \<PATH TO OUTPUT LOCATION\>, replace with the path to the image you wish to run and the desired output location and filename. 
+ 
 
 # Video recognition
 
-If you would like to detect moving objects or directly from your webcam, follow the instructions below. It uses the Jetson Nano to capture and process the image from the webcam, and then uses RTP to send it to your host machine to view. This is a bit more advanced than the image recognition instructions. 
+If you would like to detect moving objects or directly from your webcam, follow the instructions below. It uses the Jetson Nano to capture and process the image from the webcam, and then uses RTP to send it to your host machine to view. This is a bit more complicated than the image recognition instructions. 
 
  - First, check and notate your computer's (not the nano's) local IP address. We will need this later. 
  - Then, connect your camera to your nano and check your video device number by running the following
@@ -57,12 +56,13 @@ If you would like to detect moving objects or directly from your webcam, follow 
  - Run the following command on your nano to use the model along with RTP to broadcast the video data from your nano to your host computer. Replace <DEVICE NUMBER> with your video device number, and <LOCAL IP ADDRESS> with your computer's local IP address. 
 
     ```bash
-    imagenet.py --model=<PATH TO RESNET18.ONNX> --input_blob=input_0 --output_blob=output_0 --labels=<PATH TO LABELS.TXT> /dev/video<DEVICE NUMBER> rtp://<LOCAL IP ADDRESS>:1234
+    imagenet.py --model=<PATH TO RESNET18.ONNX> --input_blob=input_0 --output_blob=output_0 \
+    --labels=<PATH TO LABELS.TXT> /dev/video<DEVICE NUMBER> rtp://<LOCAL IP ADDRESS>:1234
     ```
 
-    > **Note**: When copying, replace the text in angled brakets with their respective paths. For <PATH TO DOWNLOADED RESNET18.ONNX> and <PATH TO DOWNLOADED LABELS.TXT>, replace with the path to the files from this repo. For <PATH TO INPUT IMAGE> and <PATH TO OUTPUT LOCATION>, For <DEVICE NUMBER> and <LOCAL IP ADDRESS>, replace with the device number of your camera from step 2 and your computer's local IP address from step 1. 
+    > **Note**: When copying, replace the text in angled brakets with their respective paths. For \<PATH TO DOWNLOADED RESNET18.ONNX\> and \<PATH TO DOWNLOADED LABELS.TXT\>, replace with the path to the files from this repo. For \<DEVICE NUMBER\> and \<LOCAL IP ADDRESS\>, replace with the device number of your camera from step 2 and your computer's local IP address from step 1. 
 
- - Now that the Jetson Nano is broadcasting live video data, we are ready to receive that data from our home computer. There are two way to do so, one is with GStreamer and VLC Media player. Using GStreamer is recommended as its latency is much lower than that of the VLC Media player, however if GStreamer does not work, VLC can be a fallback option. The following is taken from [this file](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md). 
+ - Now that the Jetson Nano is broadcasting live video data, we are ready to receive that data from your host computer. There are two ways to do so. One is with GStreamer and the other is with VLC Media player. Using GStreamer is recommended as its latency is much lower than that of the VLC Media player. However if GStreamer does not work, VLC can be a fallback option. The following is taken from [this file](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md). 
     
 
     * Using GStreamer:
@@ -85,3 +85,8 @@ If you would like to detect moving objects or directly from your webcam, follow 
 	
     	* Open the stream in VLC by double-clicking the SDP file
     	* You may want to reduce the `File caching` and `Network caching` settings in VLC as [shown here](https://www.howtogeek.com/howto/windows/fix-for-vlc-skipping-and-lagging-playing-high-def-video-files/)
+	
+	
+# Demo
+
+#### [Image Recognition Demo](https://youtu.be/Y6P_PTaILX0)
