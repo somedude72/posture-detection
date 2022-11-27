@@ -41,6 +41,9 @@ imagenet.py --model=<PATH TO DOWNLOADED RESNET18.ONNX> --input_blob=input_0 --ou
 
  > **Note**: When copying, replace the text in angled brakets with their respective paths. For <PATH TO DOWNLOADED RESNET18.ONNX> and <PATH TO DOWNLOADED LABELS.TXT>, replace with the path to the files from this repo. For <PATH TO INPUT IMAGE> and <PATH TO OUTPUT LOCATION>, replace with the path to the image you wish to run and the desired output location and filename. 
 
+#### Demo
+
+ - If you are confused as to how to use the command, you can watch the demo video [here](https://youtu.be/Y6P_PTaILX0)
 
 # Video recognition
 
