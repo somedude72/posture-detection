@@ -1,2 +1,2 @@
-bad-posture
 good-posture
+bad-posture
