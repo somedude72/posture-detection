@@ -9,7 +9,7 @@ This model works best when you face directly into the camera, and is designated 
 # Installation
 
  - Install Python 3 on your Jetson Nano
- - Clone the jetson-inference project into your home Directory
+ - Clone the jetson-inference project into your home directory
  
 ```bash
 git clone --recursive https://github.com/dusty-nv/jetson-inference
