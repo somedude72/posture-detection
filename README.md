@@ -97,6 +97,10 @@ Now that the Jetson Nano is broadcasting live video data, we are ready to receiv
 	
 # Demo and Resources
 
- [Image Recognition Demo](https://youtu.be/Y6P_PTaILX0)
- [Video Classification Demo](https://youtu.be/sSHaRQRecs8)
- [Furthur Resources]()
+ **[Image Recognition Demo](https://youtu.be/Y6P_PTaILX0)**
+ 
+ **[Video Classification Demo](https://youtu.be/sSHaRQRecs8)**
+ 
+ **[Furthur reading](https://github.com/dusty-nv/jetson-inference/)**
+ 
+ 
