@@ -1,12 +1,12 @@
-# Posture Detection
+## Posture Detection
 
 <img width="324" alt="TN" src="https://user-images.githubusercontent.com/101906945/204119817-f6b19fa1-9890-4a67-8aeb-3b37161a269f.png"><img width="324" alt="TN2" src="https://user-images.githubusercontent.com/101906945/204119820-cf92690c-3703-42b0-b596-f7cddb25b570.png">
 
-This is the Final Project for Nvidia and IDTech's program. It is a model that can identify good sitting posture and bad sitting posture (Kyphosis and Forward Head) with both images and video. This model is trained from a tiny dataset consisting of only 100 images of bad posture and 100 images of good posture, all of which are taken from a webcam. 
+This page is designated for the Final Project submission for Nvidia and IDTech's program. This project is a machine learning model that can identify good sitting posture and bad sitting posture (Kyphosis and Forward Head) with both images and video. The model is trained from a tiny dataset consisting of only 100 images of bad posture and 100 images of good posture, all of which are taken from a webcam. 
 
-This model works best when you face directly into the camera, and is designated to run on the Jetson Nano. Basic Linux terminal knowledge is recommended. 
+This model works best when you face directly into the camera, and is designed to run on the Jetson Nano. Basic Linux terminal knowledge is recommended. 
 
-# Installation
+## Installation
 
  - Install Python 3 on your Jetson Nano
  - Clone the jetson-inference project into your home directory
@@ -37,7 +37,7 @@ cmake ../
  ```
 
 
-# Image Recognition
+## Image Recognition
 
 
 If you would only like to detect stationary images, run the command below. Note that the model is trained to take the images from your webcam, so stock images from the internet is going to work less optimally and will have much higher error rates than images coming out of a webcam. For most optimal results, use video recognition. 
@@ -52,7 +52,7 @@ imagenet.py --model=<RESNET18.ONNX> --input_blob=input_0 --output_blob=output_0 
  > **Note**: Replace the text in angled brakets with paths to the file (not the directory). \<RESNET18.ONNX\> and \<LABELS.TXT\> should be the files downloaded from this repo. \<INPUT IMAGE\> and \<OUTPUT IMAGE\> should be the path to the image you wish to run and the desired output location and filename. 
  
 
-# Video recognition
+## Video recognition
 
 If you would like to detect moving objects or directly from your webcam, follow the instructions below. It uses the Jetson Nano to capture and process the image from the webcam, and then uses RTP to send it to your host machine to view. This is a bit more complicated than the image recognition instructions. 
 
@@ -95,7 +95,7 @@ Now that the Jetson Nano is broadcasting live video data, we are ready to receiv
      - You may want to reduce the `File caching` and `Network caching` settings in VLC as [shown here](https://www.howtogeek.com/howto/windows/fix-for-vlc-skipping-and-lagging-playing-high-def-video-files/)
 	
 	
-# Demo and Resources
+## Demo and Resources
 
  **[Image Recognition Demo](https://youtu.be/Y6P_PTaILX0)**
  
