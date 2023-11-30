@@ -22,7 +22,8 @@ mkdir build
 cd build
 cmake ../
 ```
- > **Note**: Leave everything as is during the installation process
+ > [!NOTE]
+ > Leave everything as is during the installation process
  
  - Clone this repository into the jetson-inference folder
  ```bash
@@ -49,7 +50,8 @@ imagenet.py --model=<RESNET18.ONNX> --input_blob=input_0 --output_blob=output_0 
 --labels=<LABELS.TXT> <INPUT IMAGE> <OUTPUT IMGAE>
   ```
 
- > **Note**: Replace the text in angled brakets with paths to the file (not the directory). \<RESNET18.ONNX\> and \<LABELS.TXT\> should be the files downloaded from this repo. \<INPUT IMAGE\> and \<OUTPUT IMAGE\> should be the path to the image you wish to run and the desired output location and filename. 
+ > [!NOTE]
+ > Replace the text in angled brakets with paths to the file (not the directory). \<RESNET18.ONNX\> and \<LABELS.TXT\> should be the files downloaded from this repo. \<INPUT IMAGE\> and \<OUTPUT IMAGE\> should be the path to the image you wish to run and the desired output location and filename. 
  
 
 ## Video recognition
@@ -68,7 +70,8 @@ If you would like to detect moving objects or directly from your webcam, follow 
     --labels=<LABELS.TXT> /dev/video<DEVICE NUMBER> rtp://<IP ADDRESS>:1234
     ```
 
-    > **Note**: Replace the text in the angled brakets with the paths to the file (not the directory). For \<DEVICE NUMBER\> and \<IP ADDRESS\>, replace with the device number from step 2 and the IP address from step 1. 
+    > [!NOTE]
+    > Replace the text in the angled brakets with the paths to the file (not the directory). For \<DEVICE NUMBER\> and \<IP ADDRESS\>, replace with the device number from step 2 and the IP address from step 1. 
 
 Now that the Jetson Nano is broadcasting live video data, we are ready to receive that data from your host computer. There are two ways to do so. One is with GStreamer and the other is with VLC Media player. Using GStreamer is recommended as its latency is much lower than that of the VLC Media player. However if GStreamer does not work, VLC can be a fallback option. The following is taken from [this file](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md#rtp). 
     
