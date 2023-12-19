@@ -25,7 +25,7 @@ cmake ../
 ```
 
  > [!NOTE]
- > Leave everything as is during the build
+ > Leave everything as is during build
 
  - Clone this repository
  ```bash
@@ -51,7 +51,7 @@ imagenet.py --model=<RESNET18.ONNX> --input_blob=input_0 --output_blob=output_0 
   ```
 
  > [!NOTE]
- > \<RESNET18.ONNX\> and \<LABELS.TXT\> should be paths to the files downloaded from this repo. \<INPUT IMAGE\> and \<OUTPUT IMAGE\> should be the paths to the image you wish to run the model on and the desired output path. 
+ > `<RESNET18.ONNX>` and `<LABELS.TXT>` should be paths to the files downloaded from this repo. `<INPUT IMAGE>` and `<OUTPUT IMAGE>` should be the paths to the image you wish to run the model on and the desired output path. 
  
 
 ## Video recognition
@@ -72,7 +72,7 @@ The following commands runs the model on live feed from a webcam attached to the
     --labels=<LABELS.TXT> /dev/video<DEVICE NUMBER> rtp://<IP ADDRESS>:1234
     ```
 > [!NOTE]
-> \<RESNET18.ONNX\> and \<LABELS.TXT\> should be paths to the files downloaded from this repo. \<DEVICE NUMBER\> and \<IP ADDRESS\> should be the ones from step 2 and 1 respectively. 
+> `<RESNET18.ONNX>` and `<LABELS.TXT>` should be paths to the files downloaded from this repo. `<DEVICE NUMBER>` and `<IP ADDRESS>` should be the ones from step 2 and 1 respectively. 
 
 Now that the Jetson Nano is broadcasting live video data, we are ready to receive the data from the host computer. There are two ways to do so. One is with GStreamer and the other is with VLC Media player. Using GStreamer is recommended as its latency is much lower than VLC. Use the following commands (taken from [this file](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md#rtp)) on the host computer to receive the footage. 
     
