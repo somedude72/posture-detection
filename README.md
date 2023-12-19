@@ -107,4 +107,8 @@ Now that the Jetson Nano is broadcasting live video data, we are ready to receiv
  
  **[Furthur reading](https://github.com/dusty-nv/jetson-inference/)**
  
- <span style="color:grey">Last updated Dec 2023</span>
+--
+
+Last updated Dec 2023
+
+Not in active development
