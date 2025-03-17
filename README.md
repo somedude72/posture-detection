@@ -2,9 +2,7 @@
 
 <img width="324" alt="TN" src="https://user-images.githubusercontent.com/101906945/204119817-f6b19fa1-9890-4a67-8aeb-3b37161a269f.png"><img width="324" alt="TN2" src="https://user-images.githubusercontent.com/101906945/204119820-cf92690c-3703-42b0-b596-f7cddb25b570.png">
 
-This page is designated for the Final Project submission for Nvidia and IDTech's program. The project is a machine learning model that can identify good sitting posture and bad sitting posture with both images and video. The model is trained from a tiny dataset consisting of only 100 images of bad posture and 100 images of good posture, all of which are taken from a webcam. 
-
-This model is designed to run on the Jetson Nano. 
+This project is a machine learning model that can identify good sitting posture and bad sitting posture with both images and video. The model is trained from a dataset consisting of only 100 images of bad posture and 100 images of good posture, all of which are taken from a webcam. This model is designed to run on the Jetson Nano. 
 
 ## Installation
 
@@ -107,8 +105,3 @@ Now that the Jetson Nano is broadcasting live video data, we are ready to receiv
  
  **[Furthur reading](https://github.com/dusty-nv/jetson-inference/)**
  
---
-```
-Last updated Dec 2023  
-Not in active development
-```
