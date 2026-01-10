@@ -95,13 +95,4 @@ Now that the Jetson Nano is broadcasting live video data, we are ready to receiv
 	
      - Open the stream in VLC by double-clicking the SDP file
      - You may want to reduce the `File caching` and `Network caching` settings in VLC as [shown here](https://www.howtogeek.com/howto/windows/fix-for-vlc-skipping-and-lagging-playing-high-def-video-files/)
-	
-	
-## Demo and Resources
-
- **[Image Recognition Demo](https://youtu.be/Y6P_PTaILX0)**
- 
- **[Video Classification Demo](https://youtu.be/sSHaRQRecs8)**
- 
- **[Furthur reading](https://github.com/dusty-nv/jetson-inference/)**
  
